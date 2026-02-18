@@ -18,19 +18,25 @@ body {
 
 /* HEADER */
 .header {
-  background: linear-gradient(135deg, #25aad3, #102B3C, #102b10);
+  background: linear-gradient(135deg, #373753, #102B3C, #102b10);
   color: white;
 }
 
 .container {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 20px 8%;
+  padding: 0px 8%;
+  height: 100px;
 }
 
 .logo {
-  height: 95px;
+  position: absolute;
+  left: 8px;
+  height: 300px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 nav a {
@@ -56,11 +62,20 @@ nav a {
 }
 
 .btn {
-  background: ;
+  background: #D16B26; /* Cor Laranja principal da Intitec */
   color: white;
   padding: 14px 34px;
   border-radius: 30px;
   text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+.btn:hover {
+  background: #fd5949; /* Muda para o azul escuro ao passar o mouse */
+  transform: scale(1.05); /* Dá um leve aumento no botão */
 }
 
 /* --- Substitua a parte QUEM SOMOS no style.css por isto --- */
@@ -133,14 +148,40 @@ nav a {
   background: #06273f;
   color: white;
 }
-
+/* Fundo da seção (removendo o azul claro do fundo) */
 #porque {
-    background: linear-gradient(135deg, #ffffff, #06273f);
-  color: #000;
+  background: linear-gradient(120deg, #D16B26 75%, #102B3C 5%);
+  color: #102B3C;
+  padding: 80px 10%;
 }
 
+/* Título da seção */
+#porque h2 {
+  color: #102B3C; /* Azul escuro da sua marca */
+  margin-bottom: 40px;
+}
+
+/* Ajustando as cores dos blocos específicos */
+.porque-card.cor1 {
+  background: linear-gradient(135deg, #102B3C, #102b10); /* Laranja forte */
+}
+
+.porque-card.cor2 {
+  background: linear-gradient(135deg, #102B3C, #102b10); /* Azul bem escuro */
+}
+
+.porque-card.cor3 {
+  background: linear-gradient(135deg, #102B3C, #102b10); /* Mistura das duas cores */
+}
+
+/* Garante que o texto dentro dos cards seja sempre branco */
+.porque-card h3, .porque-card p {
+  color: #ffffff !important;
+}
+
+
 #sobre {
-   background: linear-gradient(135deg, #25aad3, #102B3C, #102b10);
+   background: linear-gradient(135deg, #d35c25, #102B3C, #102b10);
   color: white;
 }
 
@@ -197,17 +238,18 @@ nav a {
   color: white;
 }
 
-/* DIFERENCIAIS */
 .diferenciais {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 90px;
+  max-width: 900px; /* Reduzi um pouco a largura máxima para os blocos não ficarem esticados demais no PC */
+  margin: 0 auto;
 }
 
 .dif-item {
   padding: 35px;
   border-radius: 22px;
-  background-color: #bdcfdd;
+  background-color: #e04d09;
   border-radius: 8px solid #102b10;
 }
 
@@ -407,74 +449,85 @@ footer {
   max-width: 600px;
 }
 
-/* Cards */
-.porque-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
+/* Cor base para todos os cards (caso esqueça de uma classe) */
 .porque-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  border-radius: 20px;
   padding: 30px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  color: #ffffff;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.porque-card h3 {
-  margin-bottom: 10px;
+/* Personalização por classe */
+.porque-card.cor1 {
+  background: linear-gradient(135deg, #102B3C, #D16B26); /* Laranja Intitec */
 }
-.porque-content {
-  position:
+
+.porque-card.cor2 {
+  background: linear-gradient(135deg, #102B3C, #D16B26); /* Azul Escuro */
+}
+
+.porque-card.cor3 {
+  background: linear-gradient(135deg, #102B3C, #D16B26); /* Verde Sustentável */
+}
+
+/* Ajuste do Título da Seção para garantir leitura */
+#porque h2 {
+  color: #102B3C; /* Azul escuro para destacar no fundo claro */
+}
 }
 /* ===== CORREÇÃO DIFERENCIAIS ===== */
 /* ===== NOSSOS DIFERENCIAIS – ESTILO FINAL ===== */
 
+/* ===== NOSSOS DIFERENCIAIS – ESTILO CORRIGIDO ===== */
+
 #diferenciais {
-  background: #06273f;
-  color: white;
+  background: linear-gradient(135deg, #102B3C, #06273f); /* Fundo azul escuro */
+  padding: 80px 10%;
 }
 
 #diferenciais h2 {
+  color: #ffffff; /* Título branco */
   margin-bottom: 50px;
 }
 
 .diferenciais {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .dif-item {
-  background: linear-gradient(95deg, #D16B26, #102B3C);
-  padding: 35px;
-  border-radius: 22px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  /* Gradiente do Laranja para o Azul Escuro da Intitec */
+  background: linear-gradient(135deg, #D16B26, #102B3C); 
+  padding: 30px;
+  border-radius: 15px;
+  color: white; /* Texto branco para não ficar preto */
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
 
 .dif-item:hover {
-  transform: translateY(-10px);
+  transform: scale(1.02);
 }
 
 .dif-item h3 {
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  color: #FFD28A; /* Laranja claro para o título do bloco */
+  margin-bottom: 10px;
 }
 
 .dif-item p {
-  font-size: 1rem;
-  line-height: 1.6;
+  color: #ffffff;
 }
 #servicos h2 {
   font-size: 3rem;
   color: #ffffff;
 }
 #porque {
-  background: linear-gradient(135deg, #102B3C, #06273f),
+  background: linear-gradient(135deg, #833e17, #06273f),
 }
 #diferenciais {
   background: linear-gradient(135deg, #D16B26, #102B3C);
