@@ -415,7 +415,7 @@ footer {
 @media (max-width: 768px) {
   .social-float {
   position: fixed;
-  top: 100%;
+  top: 25%;
   right: 20px;
   transform: translateY(-50%); /* Centraliza verticalmente */
   display: flex;
@@ -997,4 +997,5 @@ footer {
         height: 250px; /* Um pouco menor no celular */
     }
 }
+
 
