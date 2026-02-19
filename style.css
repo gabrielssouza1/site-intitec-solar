@@ -151,7 +151,7 @@ nav a {
   background: #06273f;
   color: white;
 }
-/* ===== REGINADA: POR QUE ESCOLHER ===== */
+/* ===== REPAGINADA: POR QUE ESCOLHER ===== */
 #porque {
   background: #102B3C;
   padding: 100px 8%;
@@ -415,7 +415,7 @@ footer {
 @media (max-width: 768px) {
   .social-float {
   position: fixed;
-  top: 50%;
+  top: 100%;
   right: 20px;
   transform: translateY(-50%); /* Centraliza verticalmente */
   display: flex;
@@ -997,3 +997,4 @@ footer {
         height: 250px; /* Um pouco menor no celular */
     }
 }
+
