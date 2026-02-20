@@ -1,49 +1,43 @@
-// ===== SCROLL SUAVE PARA LINKS DO MENU =====
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
+function enviarEstrategiaVendas() {
+  const btn = document.getElementById("btnSimular");
+  
+  // Captura os dados dos campos do formulário
+  const nome = document.getElementById("nome").value;
+  const gasto = document.getElementById("gasto").value;
+  const whatsapp = document.getElementById("whatsapp").value;
+  const email = document.getElementById("email").value;
 
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-<script>
-document.getElementById("formSolar").addEventListener("submit", function(e) {
-  e.preventDefault();
+  // Validação simples para não enviar vazio
+  if (!nome || !gasto || !whatsapp) {
+    alert("Por favor, preencha seus dados para receber o estudo.");
+    return;
+  }
 
-  const gasto = parseFloat(document.getElementById("gasto").value);
-  const resultadoDiv = document.getElementById("resultado");
-  const valorTexto = document.getElementById("valor-economia");
-
-  // Cálculo Simples: Média de 90% de economia
-  const economiaEstimada = gasto * 0.90;
-
-  // Mostrar Resultado com animação simples
-  valorTexto.innerText = `R$ ${economiaEstimada.toLocaleString('pt-BR', {minimumFractionDigits: 2})} /mês`;
-  resultadoDiv.style.display = "block";
-  resultadoDiv.scrollIntoView({ behavior: 'smooth' });
-
-  // Envio dos dados para o Google Sheets (seu código original)
-  const dados = {
-    nome: document.getElementById("nome").value,
-    gasto: gasto,
-    whatsapp: document.getElementById("whatsapp").value,
-    // Note: adicionei campos conforme o HTML novo
+  // Organiza os dados exatamente como o Script do Google espera
+  const dadosParaPlanilha = {
+    data: new Date().toLocaleString("pt-BR"),
+    nome_cliente: nome,
+    gasto_mensal: gasto,
+    whatsapp_contato: whatsapp,
+    email_contato: email
   };
 
-  fetch(https://script.google.com/macros/s/AKfycbzwHxJEDV3W_WKassr8Rsq3C1824haBophYCvwpq7AQz9raauf3dVx4w1gMh7r760gt/exec
-  {
+  btn.innerText = "Enviando...";
+  btn.disabled = true;
+
+  // AQUI VOCÊ USA A SUA URL DO GOOGLE
+  fetch("https://script.google.com/macros/s/AKfycbzwHxJEDV3W_WKassr8Rsq3CI824haBophYCvwpq7AQz9raauf3dVx4w1gMhTr76Dqt/exec", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    }
-    body: JSON.stringify(dados)
-  })
-  .then(response => response.json())
-  .then(() => console.log("Dados enviados!"))
-  .catch(err => console.error(err));
-});
+    mode: "no-cors",
+    body: JSON.stringify(dadosParaPlanilha)
+  });
+
+  // REDIRECIONAMENTO PARA O WHATSAPP (Estratégia de Vendas)
+  const mensagem = `Olá! Meu nome é ${nome}. Acabei de Preencher o Fórmulario no site. Meu gasto mensal é R$ ${gasto}. Quero saber quanto vou economizar!`;
+  const urlZap = `https://wa.me/5591985981418?text=${encodeURIComponent(mensagem)}`;
+
+  // Espera só um pouquinho para dar tempo do envio e pula para o Zap
+  setTimeout(() => {
+    window.location.href = urlZap;
+  }, 800);
+}

@@ -24,9 +24,10 @@
   </div>
 
   <div class="hero">
-    <h1>INTITEC SOLAR</h1>
+    <h1>
+  <span class="intitec">INTITEC</span> <span class="solar">SOLAR</span></h1>
     <a href="https://wa.me/5591985981418" class="btn">
-       <i class="fa-brands fa-whatsapp"></i> Solicite Já Seu Orçamento
+       <i class="fa-brands fa-whatsapp"></i> Solicite Já Seu Orçamento!
     </a>
   </div>
 </header>
@@ -153,64 +154,50 @@
 <section id="como-funciona" class="section">
   <h2>Como Funciona?</h2>
   <div class="fluxo-grafico">
-    
     <div class="passo">
-      <div class="circle">1</div>
       <i class="fa-solid fa-solar-panel"></i>
       <h3>Painel Solar</h3>
-      <p>Captam a energia do sol e a converte em eletricidade </p>
+      <p>Captam a energia do sol e a converte em eletricidade</p>
     </div>
-
     <div class="passo">
-      <div class="circle">2</div>
       <i class="fa-solid fa-box-archive"></i>
       <h3>String Box</h3>
-      <p>Responsável pela proteção do inversor </p>
+      <p>Responsável pela proteção do inversor</p>
     </div>
-
     <div class="passo">
-      <div class="circle">3</div>
       <i class="fa-solid fa-bolt-lightning"></i>
       <h3>Inversor</h3>
-      <p>Converte a energia gerada nos módulos para as características da nossa rede elétrica </p>
+      <p>Converte a energia gerada nos módulos para as características da nossa rede elétrica</p>
     </div>
-
     <div class="passo">
-      <div class="circle">4</div>
       <i class="fa-solid fa-house-chimney-user"></i>
-      <h3>Quadro Elétrico de Distribuição</h3>
-      <p>Parte da energia gerada é consumida instantâneamente pelos aparelhos eletricos do estabelecimento </p>
+      <h3>Quadro Elétrico</h3>
+      <p>Parte da energia é consumida instantaneamente pelos aparelhos</p>
     </div>
-
     <div class="passo">
-      <div class="circle">5</div>
       <i class="fa-solid fa-gauge-high"></i>
-      <h3>Medidor de Energia Bidirecional</h3>
-      <p>Local onde é feita a medição da energia consumida e injetada na rede, podendo registrar os créditos gerados pela unidade consumidora. </p>
+      <h3>Medidor Bidirecional</h3>
+      <p>Mede a energia consumida e injetada na rede, gerando créditos</p>
     </div>
-</section>
-
-<section id="diferenciais" class="section">
+  </div>
+</section> <section id="diferenciais" class="section">
   <h2>Nossos Diferenciais</h2>
-  <div class="diferenciais">
+  <div class="diferenciais-grid">
     <div class="dif-item">
       <i class="fa-solid fa-handshake-angle"></i>
       <h3>Atendimento Consultivo</h3>
-      <p>A Intitec trata cada cliente como único. Explica com clareza e orienta com transparência.</p>
+      <p>A Intitec trata cada cliente como único. Explica com clareza e transparência.</p>
     </div>
-    
     <div class="dif-item">
       <i class="fa-solid fa-shield-halved"></i>
       <h3>Autoridade Técnica</h3>
-      <p>Projetos executados com base técnica sólida respeitando as normas da Equatorial e da ANEEL.</p>
+      <p>Projetos executados respeitando as normas da Equatorial e da ANEEL.</p>
     </div>
-    
     <div class="dif-item">
       <i class="fa-solid fa-chart-line"></i>
       <h3>Resultados Reais</h3>
-      <p>Simulações precisas e Retorno sobre o investimento (Payback) bem calculado.</p>
+      <p>Simulações precisas e Retorno sobre o investimento (Payback) calculado.</p>
     </div>
-    
     <div class="dif-item">
       <i class="fa-solid fa-location-dot"></i>
       <h3>Presença no Pará</h3>
@@ -218,40 +205,34 @@
     </div>
   </div>
 </section>
-
-
 <section id="simulador" class="section">
   <div class="simulador-container">
     <div class="simulador-card">
-      <h2>Simule sua Economia</h2>
-      <p class="subtitulo">Descubra quanto você pode economizar migrando para o sol.</p>
+      <h2>Solicite Seu Orçamento!</h2>
+      <p class="subtitulo">Cadastre seus Dados</p>
       
       <form id="formSolar">
         <div class="input-group">
           <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" placeholder="Ex: João Silva" required>
+          <input type="text" id="nome" required>
         </div>
-
         <div class="input-group">
-          <label for="gasto">Gasto Mensal (R$)</label>
-          <input type="number" id="gasto" placeholder="Ex: 500" required>
+          <label for="gasto">Gasto Mensal Médio (R$)</label>
+          <input type="number" id="gasto" required>
         </div>
-
         <div class="input-group">
-          <label for="whatsapp">WhatsApp</label>
-          <input type="tel" id="whatsapp" placeholder="(91) 99999-9999" required>
+          <label for="email">Seu E-mail</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="input-group">
+          <label for="whatsapp">whatsapp</label>
+          <input type="tel" id="whatsapp" required>
         </div>
 
-        <button type="submit" id="btnSimular">
-          <i class="fa-solid fa-calculator"></i> Calcular Economia
+        <button type="button" id="btnSimular" onclick="enviarEstrategiaVendas()">
+          <i class="fa-brands fa-whatsapp"></i> Solicitar meu Projeto!
         </button>
       </form>
-
-      <div id="resultado" style="display: none;">
-        <p>Sua economia estimada é de:</p>
-        <h3 id="valor-economia">R$ 0,00 /mês</h3>
-        <small>Enviamos o estudo completo para seu e-mail!</small>
-      </div>
     </div>
   </div>
 </section>
@@ -271,32 +252,6 @@
         <img src="p11.jpg" alt="projeto 11">
     </div>
 </section>
-<script>
-document.getElementById("formSolar").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const dados = {
-    nome: document.getElementById("nome").value,
-    cidade: document.getElementById("cidade").value,
-    gasto: document.getElementById("gasto").value,
-    whatsapp: document.getElementById("whatsapp").value,
-    email: document.getElementById("email").value
-  };
-
-  fetch("https://script.google.com/macros/s/AKfycbzwHxJEDV3W_WKassr8Rsq3CI824haBophYCvwpq7AQz9raauf3dVx4w1gMhTr76Dqt/exec", {
-    method: "POST",
-    body: JSON.stringify(dados)
-  })
-  .then(response => response.text())
-  .then(data => {
-    alert("Dados enviados com sucesso!");
-    document.getElementById("formSolar").reset();
-  })
-  .catch(error => {
-    alert("Erro ao enviar.");
-  });
-});
-</script>
 
 
 <footer>
@@ -310,9 +265,10 @@ document.getElementById("formSolar").addEventListener("submit", function(e) {
   <a href="https://instagram.com/intitec_solar" target="_blank" class="social-icon instagram">
     <i class="fa-brands fa-instagram"></i>
   </a>
-  <a href="mailto:intitecsolar.1@gmail.com" class="social-icon email">
-    <i class="fa-regular fa-envelope"></i>
-  </a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=intitecsolar.1@gmail.com" target="_blank" class="social-icon email">
+    <i class="fa-solid fa-envelope"></i>
+</a>
 </div>
 
 <script src="script.js"></script>
+
