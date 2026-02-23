@@ -7,10 +7,16 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 </head>
 <body>
+
 <header class="header">
-  <div class="container">
+  <div class="container-header">
+    <div class="Menu-toggle" id="Menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    
     <img src="logo.png" class="logo" alt="Intitec Solar">
 
     <nav id="nav-menu">
@@ -19,19 +25,19 @@
       <a href="#porque">Energia Solar</a>
       <a href="#diferenciais">Diferenciais</a>
       <a href="#como-funciona">Como Funciona?</a>
-
     </nav>
   </div>
 
   <div class="hero">
     <h1>
-  <span class="intitec">INTITEC</span> <span class="solar">SOLAR</span></h1>
-    <a href="https://wa.me/5591985981418" class="btn">
-       <i class="fa-brands fa-whatsapp"></i> Solicite Já Seu Orçamento!
+      <h1 class="título">intitec solar</h1>
+        <h2 class="subtitulo">o sol na palma de suas mãos!</h2>
+    </h1>
+    <a href="#simulador" class="btn">
+       <i class="fa-solid fa-file-invoice-dollar"></i> Solicite Já Seu Orçamento!
     </a>
   </div>
 </header>
-
 <section id="sobre" class="section">
   <div class="quem-container">
     <div class="quem-texto">
@@ -64,39 +70,37 @@
 
 <section id="servicos" class="section">
   <h2>Nossos Serviços</h2>
+
   <div class="servicos-wrapper">
-    
+    <!-- conteúdo do wrapper, se necessário -->
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <i class="fa-solid fa-pen-ruler"></i>
+      <h3>Projeto Personalizado</h3>
+      <p>Desenvolvemos projetos técnicos individualizados, analisando seu histórico de consumo e a estrutura do local para garantir a máxima eficiência energética e o melhor custo-benefício.</p>
     </div>
 
-   <div class="cards">
-      <div class="card">
-        <i class="fa-solid fa-pen-ruler"></i>
-        <h3>Projeto Personalizado</h3>
-        <p>Desenvolvemos projetos técnicos individualizados, analisando seu histórico de consumo e a estrutura do local para garantir a máxima eficiência energética e o melhor custo-benefício.</p>
-      </div>
-      
-      <div class="card">
-        <i class="fa-solid fa-hand-holding-dollar"></i>
-        <h3>Financiamento</h3>
-        <p>Trabalhamos com as melhores linhas de crédito (BV, Santander, Sicredi, Banco do Brasil). Trocamos a sua conta de luz pela parcela do financiamento, tornando a energia solar acessível.</p>
-      </div>
-      
-      <div class="card">
-        <i class="fa-solid fa-helmet-safety"></i>
-        <h3>Instalação Profissional</h3>
-        <p>Equipe de engenharia e técnicos credenciados realizam a instalação de forma rápida, segura e respeitando rigorosamente todas as normas da ANEEL e da concessionária local.</p>
-      </div>
-      
-      <div class="card">
-        <i class="fa-solid fa-mobile-screen-button"></i>
-        <h3>Pós-venda e Monitoramento</h3>
-        <p>O nosso compromisso não termina na instalação. Disponibilizamos aplicativo para você acompanhar a geração 24h por dia na palma da mão, além de suporte técnico contínuo.</p>
-      </div>
+    <div class="card">
+      <i class="fa-solid fa-hand-holding-dollar"></i>
+      <h3>Financiamento</h3>
+      <p>Trabalhamos com as melhores linhas de crédito (BV, Santander, Sicredi, Banco do Brasil). Trocamos a sua conta de luz pela parcela do financiamento, tornando a energia solar acessível.</p>
     </div>
-    
+
+    <div class="card">
+      <i class="fa-solid fa-helmet-safety"></i>
+      <h3>Instalação Profissional</h3>
+      <p>Equipe de engenharia e técnicos credenciados realizam a instalação de forma rápida, segura e respeitando rigorosamente todas as normas da ANEEL e da concessionária local.</p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      <h3>Pós-venda e Monitoramento</h3>
+      <p>O nosso compromisso não termina na instalação. Disponibilizamos aplicativo para você acompanhar a geração 24h por dia na palma da mão, além de suporte técnico contínuo.</p>
+    </div>
   </div>
 </section>
-
 
 <section id="porque" class="section">
   <div class="porque-container">
@@ -113,7 +117,7 @@
           <i class="fa-solid fa-chart-line"></i>
         </div>
         <div class="beneficio-info">
-          <h3>Economia de até 95%</h3>
+          <h3>Economia de até 85%</h3>
           <p>Reduza drasticamente seus custos mensais e proteja-se contra os constantes aumentos da tarifa de energia.</p>
         </div>
       </div>
@@ -151,35 +155,60 @@
 
   </div>
 </section>
-<section id="como-funciona" class="section">
-  <h2>Como Funciona?</h2>
-  <div class="fluxo-grafico">
-    <div class="passo">
-      <i class="fa-solid fa-solar-panel"></i>
-      <h3>Painel Solar</h3>
-      <p>Captam a energia do sol e a converte em eletricidade</p>
-    </div>
-    <div class="passo">
-      <i class="fa-solid fa-box-archive"></i>
-      <h3>String Box</h3>
-      <p>Responsável pela proteção do inversor</p>
-    </div>
-    <div class="passo">
-      <i class="fa-solid fa-bolt-lightning"></i>
-      <h3>Inversor</h3>
-      <p>Converte a energia gerada nos módulos para as características da nossa rede elétrica</p>
-    </div>
-    <div class="passo">
-      <i class="fa-solid fa-house-chimney-user"></i>
-      <h3>Quadro Elétrico</h3>
-      <p>Parte da energia é consumida instantaneamente pelos aparelhos</p>
-    </div>
-    <div class="passo">
-      <i class="fa-solid fa-gauge-high"></i>
-      <h3>Medidor Bidirecional</h3>
-      <p>Mede a energia consumida e injetada na rede, gerando créditos</p>
+<section id="como-funciona" class="como-funciona-section">
+  <div class="container">
+    <h2 class="section-title">COMO FUNCIONA?</h2>
+    <p class="section-subtitle">Entenda o caminho da energia solar na sua casa.</p>
+
+    <div class="como-funciona-flex">
+      
+      <div class="imagem-coluna">
+        <img src="comofunciona.png" alt="Esquema Solar" class="imagem-solar">
+      </div>
+
+      <div class="steps-container">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Painel Solar</h3>
+            <p>Captam a energia do sol e a convertem em eletricidade.</p>
+          </div>
+        </div>
+
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>String Box</h3>
+          <p>Responsável pela proteção do inversor.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Inversor</h3>
+          <p>Converte a energia gerada nos módulos para as características da nossa rede elétrica.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Quadro Elétrico de Distribuição</h3>
+          <p>Parte da energia gerada é consumida instantaneamente pelos aparelhos elétricos.</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Medidor Bidirecional</h3>
+          <p>Local de medição da energia consumida e injetada, registrando os créditos gerados.</p>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 </section> <section id="diferenciais" class="section">
   <h2>Nossos Diferenciais</h2>
   <div class="diferenciais-grid">
@@ -206,13 +235,13 @@
   </div>
 </section>
 <section id="simulador" class="section">
-  <div class="simulador-container">
-    <div class="simulador-card">
-      <h2>Solicite Seu Orçamento!</h2>
+      <h2 class="titulo-principal">Solicite Seu Orçamento!</h2>
+      <div class="simulador-container">
+        <div class="simulador-card">
       <p class="subtitulo">Cadastre seus Dados</p>
-      
       <form id="formSolar">
         <div class="input-group">
+
           <label for="nome">Nome Completo</label>
           <input type="text" id="nome" required>
         </div>
@@ -230,7 +259,7 @@
         </div>
 
         <button type="button" id="btnSimular" onclick="enviarEstrategiaVendas()">
-          <i class="fa-brands fa-whatsapp"></i> Solicitar meu Projeto!
+          </i> Enviei Meus dados!
         </button>
       </form>
     </div>
@@ -253,6 +282,38 @@
     </div>
 </section>
 
+<section id="inversores">
+  <h2>Marcas de Inversores que Trabalhamos</h2>
+
+  <div class="inversores-trabalhamos">
+        <img src="fronius.png" alt="fronius">
+        <img src="solis.png" alt="solis">
+        <img src="renovigi.png" alt="renovi-solar">
+        <img src="canandian.png" alt="canandian">
+        <img src="hoymiles.png" alt="hoymiles">
+        <img src="ap.png" alt="ap-systems">
+        <img src="huawei.png" alt="huawei">
+        <img src="sungrow.png" alt="sungrow">
+        <img src="enphase.png" alt="enphase">
+        <img src="edge.png" alt="solar-edge">
+  </div>
+</section>
+
+<section id="Paineis">
+  <h2>Marcas de Paineis que trabalhamos</h2>
+
+       <div class="paineis-solares">
+        <img src="jinko.png" alt="jinko-solar">
+        <img src="ja.png" alt="JA-SOLAr">
+        <img src="longi.png" alt="longi">
+        <img src="canandian.png" alt="canandian">
+        <img src="risen.png" alt="risen-energy">
+        <img src="byd.png" alt="byd">
+        <img src="trina.png" alt="Trina-solar">
+    
+  </div>
+</section>
+
 
 <footer>
   <p>© 2026 Intitec Solar — Todos os direitos reservados</p>
@@ -270,5 +331,9 @@
 </a>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js">
+
+</script>
+</body>
+</html>
 

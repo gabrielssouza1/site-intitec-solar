@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Octosquare';
-  src: url('TT-Octosquares-Trial-Variable.ttf') format('truetype');
+  font-family: 'Octosquares';
+  src: url('./fonts/TT-Octosquares-Trial-Variable.ttf') format('truetype');
 }
 
 /* RESET */
@@ -14,40 +14,101 @@
 body {
   background: #D16B26;
   color: #222;
+  overflow-x: hidden;   /* evita barra lateral */
+  margin: 0;
 }
-
-/* HEADER */
-.header {
-background:#102B3C;
-  color: white;
-}
-
-.container {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0px 8%;
-  height: 100px;
-}
-
 .logo {
   position: absolute;
-  left: 8px;
-  height: 300px;
-  top: 50%;
+  left: 1px;
+  height: 370px;
+  top: 40%;
   transform: translateY(-50%);
 }
 
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
+
+/* ========================================= */
+/* HEADER E MENU (Computador)                */
+/* ========================================= */
+.header {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+  background-image: url(fundo.jpg);
+  background-size: cover;
+  background-position: center;
+
+  }
+
+/* ========================================= */
+/* HEADER E MENU (PC E MOBILE)               */
+/* ========================================= */
+
+.container-header {
+  display: flex;
+  justify-content: flex-end; /* Joga o botão para a direita */
+  align-items: center;
+  padding: 0 2%;
+  height: 100px;
+  width: 100%;
+  position: relative; /* Necessário para o menu não quebrar o layout */
 }
+
+/* 1. Mostra o botão hambúrguer em TODAS as telas */
+.Menu-toggle {
+  display: block; 
+  font-size: 35px;
+  color: #ffffff; /* Cor do ícone */
+  cursor: pointer;
+  z-index: 1001; /* Fica acima do menu */
+}
+
+/* 2. Menu lateral escondido por padrão */
+#nav-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100px; /* Altura do header */
+  right: -100%; /* Esconde o menu fora da tela à direita */
+  width: 300px; /* Largura do menu no PC */
+  background: #208496;
+  padding: 30px;
+  transition: right 0.4s ease-in-out; /* Efeito suave ao abrir */
+  z-index: 1000;
+  border-radius: 0 0 0 15px;
+  box-shadow: -5px 5px 15px rgba(0,0,0,0.3);
+}
+
+/* 3. Classe que o JavaScript usa para mostrar o menu */
+#nav-menu.active {
+  right: 0; /* Traz o menu para dentro da tela */
+}
+
+/* 4. Estilo dos links dentro do menu */
+#nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.3s;
+}
+
+#nav-menu a:hover {
+  color: #D16B26; /* Fica laranja ao passar o mouse */
+}
+
+/* Ajuste para o menu ocupar a tela toda no celular */
+@media (max-width: 768px) {
+  #nav-menu {
+    width: 100%; /* No celular, o menu preenche a largura inteira */
+    border-radius: 0;
+  }
+}
+
 
 /* HERO */
 .hero {
-  min-height: 85vh;
+  min-height: 91vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,25 +120,35 @@ nav a {
 }
 
 .hero h1 {
-  font-size: 5.5rem;
+  font-size: 6.5rem;
   letter-spacing: 5px;
-  color: #102B3C;  /* Laranja da Intitec */
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
+h2 {
+  font-size: 20px;
+  font-family: 'Montserrat';
+  letter-spacing: 5px;
+  margin-top: -30px;
+  animation: fadeUp 1s ease-in-out;
+  color: white !important;
+  margin-top: -30px;
+  font-family: 'Montserrat' !important;
+}
+
 .btn {
-  background: #798156; /* Cor Laranja principal da Intitec */
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
   color: white;
-  padding: 14px 34px;
+  margin-top: 20px;
+  padding: 12px 28px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   display: inline-block;
   transition: background 0.3s ease, transform 0.2s ease;
   border: none;
 }
-
 .btn:hover {
-  background: #fd5949; /* Muda para o azul escuro ao passar o mouse */
+  background: linear-gradient(135deg, #b19d91 0%, #ffffff 100%);
   transform: scale(1.05); /* Dá um leve aumento no botão */
 }
 
@@ -452,7 +523,7 @@ footer {
 @media (max-width: 768px) {
   .social-float {
   position: fixed;
-  top: 100%;
+  top: 50%;
   right: 20px;
   transform: translateY(-50%); /* Centraliza verticalmente */
   display: flex;
@@ -586,7 +657,7 @@ footer {
 }
 
 .dif-item {
-    background: rgba(255, 255, 255, 0.05); /* Efeito de transparência */
+    background: #102B3C; /* Efeito de transparência */
     backdrop-filter: blur(10px);
     padding: 40px 30px;
     border-radius: 20px;
@@ -614,7 +685,7 @@ footer {
 
 .dif-item h3 {
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
     margin-bottom: 15px;
     min-height: 3.5rem; /* Mantém os títulos alinhados */
     display: flex;
@@ -622,8 +693,8 @@ footer {
 }
 
 .dif-item p {
-    color: #cbd5e0;
-    font-size: 1.05rem;
+    color: #ffffff;
+    font-size: 1.6rem;
     line-height: 1.6;
 }
 
@@ -781,7 +852,7 @@ footer {
 }
 
 .beneficio:hover {
-  background: #f8f9fa;
+  background: #102B3C;
   transform: translateX(10px);
 }
 
@@ -832,8 +903,6 @@ footer {
     box-shadow: 15px 15px 0px #102B3C;
   }
 }
- background: linear-gradient(90deg, #fd5949 40%);
-
 #diferenciais {
   background: linear-gradient(90deg, #06273f, #fd5949);
 }
@@ -864,114 +933,115 @@ footer {
 .galeria-projetos img:hover {
     transform: scale(1.05);
 }
-#como-funciona {
-   background: linear-gradient(90deg, #D16B26, #fd5949);
-   padding: 80px 8%;
-   text-align: center;
+/* Container que organiza os dois lados */
+/* Container que organiza a imagem e os textos lado a lado */
+.como-funciona-flex {
+    display: flex;
+    flex-direction: column; /* No celular: um em cima do outro */
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 40px auto;
 }
-
-#como-funciona h2 {
-  color: #102B3C;
+.section-title {
+  text-align: center; /* Centraliza o texto horizontalmente */
+  width: 100%;        /* Garante que o título ocupe a largura total para poder alinhar */
+  color: #102B3C !important;
   font-size: 2.5rem;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   text-transform: uppercase;
+  margin-top: 60px;
 }
 
-.fluxo-grafico {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  position: relative;
+.section-subtitle {
+  text-align: center; /* Centraliza o texto horizontalmente */
+  width: 100%;        /* Garante que o subtítulo ocupe a largura total */
+  color: #102b3c;     /* Se preferir branco para destacar no azul: #ffffff */
+  margin-bottom: 40px;
+  font-size: 2.6rem;
+  display: block;     /* Garante que ele se comporte como um bloco inteiro */
+}
+/* LADO DA IMAGEM: Aqui é onde você controla o tamanho dela */
+.imagem-coluna {
+    width: 100%;
+    max-width: 500px; /* ALTERE ESTE VALOR: 400px para menor, 600px para maior */
+    display: flex;
+    justify-content: center;
 }
 
-.passo {
-  background: #f8f9fa;
-  padding: 30px 20px;
-  border-radius: 15px;
-  transition: 0.3s;
-  border-bottom: 4px solid #D16B26; /* Linha laranja do PDF */
+.imagem-solar {
+    width: 100%; /* Ela ocupa 100% dos 500px definidos acima */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
 }
 
-.passo:hover {
-  transform: translateY(-5px);
-  background: #eef2f5;
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.05); /* Fundo sutil para o texto não ficar "solto" */
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
 }
 
-
-.passo i {
-  font-size: 2.5rem;
-  color: #102B3C;
-  margin-bottom: 15px;
+.step-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px); /* Efeito visual ao passar o rato */
 }
 
-.passo h3 {
-  color: #D16B26;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-right: 20px;
 }
 
-.passo p {
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.4;
+.step-content h3 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
 }
 
-/* Responsividade para telemóvel */
-@media (max-width: 768px) {
-  .fluxo-grafico {
-    grid-template-columns: 1fr;
-  }
+.step-content p {
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 0;
 }
+/* Configuração para Computador (Desktop) */
+@media (min-width: 992px) {
+    .como-funciona-flex {
+        flex-direction: row; /* Coloca imagem na esquerda e texto na direita */
+        align-items: flex-start; /* Alinha pelo topo */
+    }
 
-.fluxo-grafico {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  position: relative;
-}
-
-.passo {
-  background: #f8f9fa;
-  padding: 30px 20px;
-  border-radius: 15px;
-  transition: 0.3s;
-  border-bottom: 4px solid #D16B26; /* Linha laranja do PDF */
-}
-
-.passo:hover {
-  transform: translateY(-5px);
-  background: #eef2f5;
-}
-
-
-.passo i {
-  font-size: 2.5rem;
-  color: #102B3C;
-  margin-bottom: 15px;
-}
-
-.passo h3 {
-  color: #D16B26;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.passo p {
-  font-size: 1.6rem;
-  color: #444;
-  line-height: 1.4;
+    .imagem-coluna {
+        position: sticky; /* Efeito Premium: a imagem fica parada enquanto rola o texto */
+        top: 50px;
+    }
 }
 /* ===== SEÇÃO NOSSOS PROJETOS ===== */
 #projetos {
     padding: 80px 8%;
-    background-color: #102B3C; /* Fundo cinza claro para destacar as fotos */
+    background: linear-gradient(#102b3c, #D16B26);
     text-align: center;
 }
 
 #projetos h2 {
-    color: #102B3C;
-    font-size: 2.5rem;
-    color: white;
+    color: #D16B26 !important;
+    font-size: 3.5rem;
     margin-bottom: 40px;
     text-transform: uppercase;
 }
@@ -1013,7 +1083,7 @@ footer {
 #simulador {
   background: linear-gradient(135deg, #102B3C 0%, #061a27 100%);
   padding: 100px 8%;
-  color: #25D366;
+  color: #fff;
 }
 
 .simulador-container {
@@ -1037,17 +1107,18 @@ footer {
 }
 
 .simulador-card h2 {
-  color: #D16B26;
+  color: #fff;
   font-size: 2.2rem;
   margin-bottom: 10px;
   text-align: left;
 }
 
 .simulador-card .subtitulo {
-  color: #25D366;
+  color: #D16B26;
   margin-bottom: 35px;
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 2.9rem;
+  text-align: center;
 }
 
 /* Estilização dos Campos */
@@ -1055,7 +1126,7 @@ footer {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #25D366; /* Verde para destacar economia */
+  color: #fff; /* Verde para destacar economia */
   margin-bottom: 8px;
   display: block;
 }
@@ -1074,7 +1145,7 @@ footer {
 
 .simulador-card input:focus {
   outline: none;
-  border-color: #D16B26;
+  border-color: #102B3C;
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -1082,7 +1153,7 @@ footer {
 .simulador-card button {
   width: 100%;
   padding: 20px;
-  background: #D16B26;
+  background: #102B3C;
   color: white;
   border: none;
   border-radius: 12px;
@@ -1095,7 +1166,7 @@ footer {
 }
 
 .simulador-card button:hover {
-  background: #fd5949;
+  background: #102B3C;
   transform: translateY(-3px);
   box-shadow: 0 15px 30px rgba(253, 89, 73, 0.4);
 }
@@ -1106,7 +1177,7 @@ footer {
   padding: 20px;
   border-radius: 12px;
   background: rgba(37, 211, 102, 0.1);
-  border-left: 5px solid #25D366;
+  border-left: 5px solid #102B3C;
   font-size: 1.2rem;
   display: none; /* Aparece via JS */
 }
@@ -1122,10 +1193,73 @@ footer {
   padding: 12px;
   margin-bottom: 15px;
 }
-.intitec {
-  color: whitesmoke;
+.título {
+  animation: fadeUp 1s ease-in-out;
+  color: white !important;
+  margin-top: -80px;
+  font-family: 'Montserrat' !important;
+  font-weight: 700;
 }
 
-.solar {
-  color: #D16B26; /* cor azul para SOLAR */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* SECTION GERAL */
+#inversores,
+#Paineis {
+  background: linear-gradient(#0a1e2b); /* seu azul escuro */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* TÍTULO */
+#inversores h2,
+#Paineis h2 {
+  font-size: 28px;
+  color: #D16B26 !important;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0px;
+}
+
+/* GRID DAS LOGOS */
+.inversores-trabalhamos,
+.paineis-solares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 50px;
+  align-items: center;
+  justify-items: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* IMAGENS */
+.inversores-trabalhamos img,
+.paineis-solares img {
+  max-width: 140px;
+  height: auto;
+  transition: 0.3s ease;
+  opacity: 0.8;
+}
+
+/* EFEITO HOVER */
+.inversores-trabalhamos img:hover,
+.paineis-solares img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.titulo-principal {
+  text-align: center;
+  margin-top: -40px ;
+  color: #D16B26 !important;
+  font-size: 2.7rem;
 }
