@@ -1033,6 +1033,34 @@ footer {
         top: 50px;
     }
 }
+/* ========================================= */
+/* AJUSTES PARA TELEMÓVEL (MOBILE)           */
+/* ========================================= */
+@media (max-width: 768px) {
+    /* Diminui o tamanho do título para caber no ecrã */
+    .section-title {
+        font-size: 2.2rem; 
+        margin-top: 20px;
+    }
+
+    /* Diminui o subtítulo */
+    .section-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    /* Reduz o espaçamento nas laterais (as "bordas" de respiro) */
+    #como-funciona {
+        padding: 50px 5% 40px; /* Reduzi os 8% para 5% para aproveitar mais o ecrã */
+    }
+
+    /* Garante que a imagem não estica a tela */
+    .imagem-coluna {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
 /* ===== SEÇÃO NOSSOS PROJETOS ===== */
 #projetos {
     padding: 80px 8%;
