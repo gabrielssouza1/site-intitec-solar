@@ -948,7 +948,7 @@ footer {
   text-align: center; /* Centraliza o texto horizontalmente */
   width: 100%;        /* Garante que o título ocupe a largura total para poder alinhar */
   color: #102B3C !important;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
   text-transform: uppercase;
   margin-top: 60px;
@@ -959,7 +959,7 @@ footer {
   width: 100%;        /* Garante que o subtítulo ocupe a largura total */
   color: #102b3c;     /* Se preferir branco para destacar no azul: #ffffff */
   margin-bottom: 40px;
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   display: block;     /* Garante que ele se comporte como um bloco inteiro */
 }
 /* LADO DA IMAGEM: Aqui é onde você controla o tamanho dela */
