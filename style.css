@@ -1,4 +1,4 @@
-@font-face {
+p@font-face {
   font-family: 'Octosquares';
   src: url('./fonts/TT-Octosquares-Trial-Variable.ttf') format('truetype');
 }
@@ -1036,30 +1036,7 @@ footer {
 /* ========================================= */
 /* AJUSTES PARA TELEMÓVEL (MOBILE)           */
 /* ========================================= */
-@media (max-width: 768px) {
-    /* Diminui o tamanho do título para caber no ecrã */
-    .section-title {
-        font-size: 2.2rem; 
-        margin-top: 20px;
-    }
 
-    /* Diminui o subtítulo */
-    .section-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-    }
-
-    /* Reduz o espaçamento nas laterais (as "bordas" de respiro) */
-    #como-funciona {
-        padding: 50px 5% 40px; /* Reduzi os 8% para 5% para aproveitar mais o ecrã */
-    }
-
-    /* Garante que a imagem não estica a tela */
-    .imagem-coluna {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-}
 
 /* ===== SEÇÃO NOSSOS PROJETOS ===== */
 #projetos {
@@ -1080,6 +1057,46 @@ footer {
     /* Cria colunas que se ajustam sozinhas (mínimo 250px cada) */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px; /* Espaço entre as fotos */
+}
+@media (max-width: 768px) {
+    /* Força o corpo da página a não ter rolagem lateral */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Diminui drasticamente os títulos que podem estar estourando a tela */
+    .section-title {
+        font-size: 1.8rem !important; 
+        margin-top: 20px !important;
+        word-wrap: break-word; /* Força a quebra de palavra se for grande */
+    }
+
+    .section-subtitle {
+        font-size: 1.3rem !important;
+        margin-bottom: 20px !important;
+        padding: 0 10px;
+    }
+
+    /* Remove bordas ou sombras pesadas que podem causar bugs visuais */
+    .step-item {
+        margin: 10px;
+        border: none !important; /* Remove a borda se for essa a sua intenção */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra leve em vez de borda */
+    }
+
+    /* Garante que a imagem se ajuste ao tamanho do ecrã */
+    .imagem-coluna {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px;
+    }
+
+    .imagem-solar {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .galeria-projetos img {
